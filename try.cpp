@@ -9,7 +9,6 @@ class CoinClass
 {
 private:
     string abbrev_coin, name_coin;
-    int coin_ID;
 
 public:
     double exchange_rate() const;
