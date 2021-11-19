@@ -9,7 +9,7 @@ using namespace std;
 struct user
 {
     string username, email, password;
-    double coins[10];
+    double coins[10]={0};
 };
 void coin_naming(int coin_ID,string &coin_name, string &coin_abbrev)
 {
@@ -67,6 +67,7 @@ void add_data(vector<user> &v)
 {
     user cred;
     string arbit;
+    double deposit_amount;
     cout << " \nEnter your username: ";
     cin.ignore();
     getline(cin, cred.username);
@@ -75,7 +76,6 @@ void add_data(vector<user> &v)
     cout << " \nEnter your password: ";
     getline(cin, cred.password);
     cout<<endl;
-    double deposit_amount;
     cout << " \nEnter your depositing amount: ";
     cin >> deposit_amount;
     while(cin.fail() || deposit_amount <= 0)
@@ -85,11 +85,7 @@ void add_data(vector<user> &v)
         cout << "\nEnter appropriate deposit amount: ";
         cin >> deposit_amount;
     }
-// Initialize balance for the user.
-    for (int i =0; i<9 ; i++ )
-    {
-        cred.coins[i] = 0;
-    }
+
     cred.coins[9]=deposit_amount;
 
     v.push_back(cred);
@@ -118,7 +114,6 @@ void save_file(vector <user> v)
     for (int j =0; j<10 ; j++ )
     {
         database << v[i].coins[j] << endl;
-    }
     }
 }
 
