@@ -9,7 +9,7 @@ using namespace std;
 struct user
 {
     string username, email, password;
-    double coins[10];
+    double coins[10]={0};
 };
 struct transfer
 {
@@ -126,13 +126,7 @@ void add_data(vector<user> &v)
         cout << "\nEnter appropriate deposit amount: ";
         cin >> deposit_amount;
     }
-// Initialize balance for the user.
-    for (int i =0; i<9 ; i++ )
-    {
-        cred.coins[i] = 0;
-    }
     cred.coins[9]=deposit_amount;
-
     v.push_back(cred);
     return;
 }
