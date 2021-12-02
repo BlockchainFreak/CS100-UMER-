@@ -53,26 +53,21 @@ void RSA(string input_filename, bool encryption, bool decryption)
     ifstream in_file(input_filename);
     ofstream encrypted;
     if(encryption == true)
-    {
-        
-    encrypted.open("test2.txt");
-
+    {  
+       encrypted.open("test2.txt");
     }
     ofstream decrypted;
+    
     if(decryption == true)
     {
-    
-    
-    
-    decrypted.open("test3.txt");
+       decrypted.open("test3.txt");
     }
 
-
-    
     if (in_file.fail())
     {
         return;
     }
+    
     char ch;
     long long int m;
     while (in_file.get(ch))
@@ -91,7 +86,6 @@ void RSA(string input_filename, bool encryption, bool decryption)
         if(encryption == true)
         {
             encrypted << c;
-
         }
     }
 
@@ -107,5 +101,4 @@ int main()
     bool encryption = false;
     bool decryption = true;
     RSA("test.txt", encryption, decryption);
-
 }
