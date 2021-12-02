@@ -65,13 +65,13 @@ void RSA(string input_filename, bool encryption, bool decryption)
     ofstream encrypted;
     if (encryption == true)
     {
-        encrypted.open("test2.txt");
+        encrypted.open("encrypted.txt");
     }
 
     ofstream decrypted;
     if (decryption == true)
     {
-        decrypted.open("test3.txt");
+        decrypted.open("decrypted.txt");
     }
     
     while (in_file.get(ch))
