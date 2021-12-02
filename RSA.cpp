@@ -40,9 +40,13 @@ void RSA(string input_filename, bool encryption, bool decryption)
     {
         long long int flag = hcf(e, phi);
         if (flag == 1)
+        {
             break;
+        }
         else
+        {
             e++;
+        }
     }
     // making private key
     // d is for decryption
@@ -54,13 +58,13 @@ void RSA(string input_filename, bool encryption, bool decryption)
     ofstream encrypted;
     if(encryption == true)
     {  
-       encrypted.open("test2.txt");
+       encrypted.open("encrypted.txt");
     }
     ofstream decrypted;
     
     if(decryption == true)
     {
-       decrypted.open("test3.txt");
+       decrypted.open("decrypted.txt");
     }
 
     if (in_file.fail())
@@ -92,6 +96,9 @@ void RSA(string input_filename, bool encryption, bool decryption)
     in_file.close();
     encrypted.close();
     decrypted.close();
+    remove("test.txt");
+    
+    
 
     
 
