@@ -33,7 +33,7 @@ void RSA(string input_filename, bool encryption, bool decryption)
     long long int phi = (p - 1) * (q - 1); // calculate phi(n)
     // making public key
     // e is for encryption
-    double e = 7;
+    double e = 8;
 
     // check that 1 < e < phi(n) and hcf(e, phi(n)) = 1 (meaning e and phi(n) are co-prime with each other)
     while (e < phi)
@@ -98,7 +98,7 @@ void RSA(string input_filename, bool encryption, bool decryption)
 }
 int main()
 {
-    bool encryption = false;
+    bool encryption = true;
     bool decryption = true;
     RSA("test.txt", encryption, decryption);
 }
