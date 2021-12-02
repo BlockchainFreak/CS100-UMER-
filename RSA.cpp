@@ -73,13 +73,13 @@ void RSA(string input_filename, bool encryption, bool decryption)
     }
     
     char ch;
-    long long int m;
+    
     while (in_file.get(ch))
     {
         int message = ch;
 
         long long int c = pow(message, e); // encrypt the message
-        m = pow(c, d);
+        long long int m = pow(c, d);
         c = fmod(c, n);
         m = fmod(m, n);
         if (decryption == true)
