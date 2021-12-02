@@ -97,11 +97,6 @@ void RSA(string input_filename, bool encryption, bool decryption)
     encrypted.close();
     decrypted.close();
     remove("test.txt");
-    
-    
-
-    
-
 }
 int main()
 {
